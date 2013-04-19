@@ -1,7 +1,7 @@
 <?php
 require_once '../lib/auth.php';
 if(Auth::is_login()):
-    header('Location: /user');
+    header('Location: ./');
     exit;
 endif;
 
@@ -10,7 +10,7 @@ $error      = null;
 if($_SERVER['REQUEST_METHOD'] === 'POST'):
     if($_POST['user_id']   === 'sample' && $_POST['password'] === 'sample'):
         Auth::do_login();
-        header('Location: /user');
+        header('Location: ./');
         exit;
     else:
         $user_id    = htmlspecialchars($_POST['user_id'], ENT_QUOTES, 'utf-8');
@@ -51,11 +51,11 @@ endif;
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="brand" href="/">Regacy</a>
+<a class="brand" href="../">Regacy</a>
 <div class="nav-collapse collapse">
 <ul class="nav">
-<li><a href="/">Home</a></li>
-<li class="active"><a href="/user">My Page</a></li>
+<li><a href="../">Home</a></li>
+<li class="active"><a href="./">My Page</a></li>
 </ul>
 </div><!--/.nav-collapse -->
 </div>
@@ -63,7 +63,7 @@ endif;
 </div>
 
 <div class="container">
-    <form class="form-signin" id="login" action="/user/login.php" method="POST">
+    <form class="form-signin" id="login" action="./login.php" method="POST">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" name="user_id" class="input-block-level" placeholder="your account" value="<?php echo $user_id ?>">
         <input type="password" name="password" class="input-block-level" placeholder="password">

@@ -32,10 +32,10 @@ body {
 <ul class="nav">
 <li class="active"><a href="/">Home</a></li>
 <?php if(Auth::is_login()): ?>
-<li><a href="/user">My Page</a></li>
-<li><a href="/user/logout.php">Logout</a></li>
+<li><a href="user">My Page</a></li>
+<li><a href="user/logout.php">Logout</a></li>
 <?php else:?>
-<li><a href="/user/login.php">Login</a></li>
+<li><a href="user/login.php">Login</a></li>
 <?php endif;?>
 </ul>
 </div><!--/.nav-collapse -->
@@ -47,7 +47,7 @@ body {
 
 <h1>ようこそレガシーなphpサイトへ</h1>
 <p>さっさとフレームワークを使いな！</p>
-<p><a class="btn btn-primary" href="/user/login.php">ログインはこちら</a></p>
+<p><a class="btn btn-primary" href="user/login.php">ログインはこちら</a></p>
 
 </div> <!-- /container -->
 </body>

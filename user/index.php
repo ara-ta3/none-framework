@@ -2,7 +2,7 @@
 require_once '../lib/auth.php';
 /* ログイン状態でないならredirect */
 if(!Auth::is_login()):
-    header('Location: /');
+    header('Location: ../');
     exit;
 endif;
 /* ここでDBから呼び出し */
@@ -34,12 +34,12 @@ body {
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="brand" href="/">Regacy</a>
+<a class="brand" href="../">Regacy</a>
 <div class="nav-collapse collapse">
 <ul class="nav">
-<li><a href="/">Home</a></li>
-<li class="active"><a href="/user">My Page</a></li>
-<li><a href="/user/logout.php">Logout</a></li>
+<li><a href="../">Home</a></li>
+<li class="active"><a href="./">My Page</a></li>
+<li><a href="./logout.php">Logout</a></li>
 </ul>
 </div><!--/.nav-collapse -->
 </div>
