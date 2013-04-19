@@ -1,0 +1,29 @@
+{% extends 'base.twig' %}
+{% block subheader %}
+<link href="../assets/css/login.css" rel="stylesheet">
+<link href="../assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    jQuery(function(){
+        jQuery("#login").popover({
+            placement:"right",
+            trigger:"hover",
+            title:"id:sample",
+            content:"pass:sampe"
+        });
+    });
+</script>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <form class="form-signin" id="login" action="./login.php" method="POST">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" name="user_id" class="input-block-level" placeholder="your account" value="{{user_id}}">
+        <input type="password" name="password" class="input-block-level" placeholder="password">
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <br />
+        <span class="text text-error">{{error}}</span>
+    </form>
+</div>
+{% endblock %}

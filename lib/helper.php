@@ -4,6 +4,8 @@ class Helper{
     public static function twig_init(){
         Twig_Autoloader::register();
         $loader     = new Twig_Loader_Filesystem(__DIR__.'/../template/');
-        return  new Twig_Environment($loader);
+        $twig       = new Twig_Environment($loader);
+        $twig->addGlobal('base','./');
+        return $twig; 
     }
 }
