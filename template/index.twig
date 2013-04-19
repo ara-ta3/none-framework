@@ -1,0 +1,34 @@
+{% extends 'base.twig'%}
+{% block body %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="brand" href="/">Regacy</a>
+<div class="nav-collapse collapse">
+<ul class="nav">
+<li class="active"><a href="/">Home</a></li>
+{% if login %}
+<li><a href="user">My Page</a></li>
+<li><a href="user/logout.php">Logout</a></li>
+{% else %}
+<li><a href="user/login.php">Login</a></li>
+{% endif %}
+</ul>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<h1>ようこそレガシーなphpサイトへ</h1>
+<p>さっさとフレームワークを使いな！</p>
+<p><a class="btn btn-primary" href="user/login.php">ログインはこちら</a></p>
+
+</div> <!-- /container -->
+{% endblock %}
