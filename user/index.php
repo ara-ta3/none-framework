@@ -1,11 +1,12 @@
 <?php
+require_once '../lib/auth.php';
 /* ログイン状態でないならredirect */
-if(false):
+if(!Auth::is_login()):
     header('Location: /');
     exit;
 endif;
 /* ここでDBから呼び出し */
-$username   = 'arata';
+$username   = 'sample_user';
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -38,6 +39,7 @@ body {
 <ul class="nav">
 <li><a href="/">Home</a></li>
 <li class="active"><a href="/user">My Page</a></li>
+<li><a href="/user/logout.php">Logout</a></li>
 </ul>
 </div><!--/.nav-collapse -->
 </div>

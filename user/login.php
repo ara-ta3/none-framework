@@ -1,8 +1,15 @@
 <?php
+require_once '../lib/auth.php';
+if(Auth::is_login()):
+    header('Location: /user');
+    exit;
+endif;
+
 $user_id    = '';
 $error      = null;
 if($_SERVER['REQUEST_METHOD'] === 'POST'):
     if($_POST['user_id']   === 'sample' && $_POST['password'] === 'sample'):
+        Auth::do_login();
         header('Location: /user');
         exit;
     else:

@@ -1,3 +1,6 @@
+<?php
+require_once 'lib/auth.php';
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -28,8 +31,9 @@ body {
 <div class="nav-collapse collapse">
 <ul class="nav">
 <li class="active"><a href="/">Home</a></li>
-<?php if(false): ?>
+<?php if(Auth::is_login()): ?>
 <li><a href="/user">My Page</a></li>
+<li><a href="/user/logout.php">Logout</a></li>
 <?php else:?>
 <li><a href="/user/login.php">Login</a></li>
 <?php endif;?>
@@ -43,7 +47,7 @@ body {
 
 <h1>ようこそレガシーなphpサイトへ</h1>
 <p>さっさとフレームワークを使いな！</p>
-<p>ログインは<a href="/user/login.php">こちら</a></p>
+<p><a class="btn btn-primary" href="/user/login.php">ログインはこちら</a></p>
 
 </div> <!-- /container -->
 </body>
